@@ -68,6 +68,14 @@
     <router-view />
     <Episodes />
     <Contact />
+    <About />
+    <footer>
+      © 2020 Cartoon Dumpster Dive
+      <a
+        href="https://www.privacypolicygenerator.info/live.php?token=GRH9WMRWnplrExIfguDxn4pLxFH1Gr0G"
+        >Privacy Policy</a
+      >
+    </footer>
   </div>
 </template>
 
@@ -75,11 +83,13 @@
 import Episodes from "@/components/Episodes.vue";
 import Social from "@/components/Social.vue";
 import Contact from "@/components/Contact.vue";
+import About from "@/components/About.vue";
 export default {
   components: {
     Social,
     Episodes,
-    Contact
+    Contact,
+    About
   },
   data() {
     return {
