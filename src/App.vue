@@ -9,7 +9,7 @@
               @mouseover="aboutpointer = true"
               @mouseleave="aboutpointer = false"
             >
-              <a href="#"
+              <a href="#about"
                 >About the Podcast
                 <transition name="appear">
                   <div class="pointer" v-if="aboutpointer">

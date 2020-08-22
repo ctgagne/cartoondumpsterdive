@@ -1,6 +1,6 @@
 <template>
   <div id="social">
-    <a href="https://www.facebook.com/cartoondumpsterdive">
+    <a href="https://twitter.com/CartoonDD">
       <div class="social-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path
