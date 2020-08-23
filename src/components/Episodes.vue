@@ -1,6 +1,6 @@
 <template>
   <div id="episodes">
-    <div class="wrapper">
+    <!-- <div class="wrapper">
       <div class="player">
         <div class="player-controls">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -30,43 +30,44 @@
           <div class="progress__time">{{ currentTime }}</div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="podcast-list-container">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-        <path
-          d="M16 17a3 3 0 0 1-3 3h-2a3 3 0 0 1 0-6h2a3 3 0 0 1 1 .17V1l6-1v4l-4 .67V17zM0 3h12v2H0V3zm0 4h12v2H0V7zm0 4h12v2H0v-2zm0 4h6v2H0v-2z"
-        />
-      </svg> -->
       <h3>Episode Guide</h3>
-      <ul class="podcast-list">
-        <li
-          v-for="(track, index) in tracks"
-          :key="index"
-          @click="
-            chooseTrack(index);
-            play();
-            toggle(index);
-          "
-          :class="{ active: index == activeIndex }"
-        >
+      <ul class="podcast-list" v-if="episodes">
+        <li v-for="(episode, index) in episodes" :key="index">
           <div class="track-info">
-            Episode {{ track.number }} | {{ track.name }}
+            Episode {{ episode.episode_number }} | {{ episode.title }}
             <span class="publish-date">
-              {{ track.date }}
+              {{ episode.published_at }}
             </span>
           </div>
-          <div class="track-synop">
-            {{ track.synop }}
-          </div>
+          <div class="track-synop" v-html="episode.description"></div>
         </li>
       </ul>
+      <p v-else>Loading...</p>
     </div>
   </div>
 </template>
 
 <script>
+import { getEpisodes } from "@/services/track-service.js";
 export default {
-  name: "Episodes"
+  name: "Episodes",
+  data() {
+    return {
+      episodes: []
+    };
+  },
+  async created() {
+    this.episodes = (await getEpisodes()).data;
+  },
+  computed: {
+    formattedDate() {
+      let dateStr = this.episode.published_at;
+      let date = new Date(dateStr);
+      return date;
+    }
+  }
 };
 </script>
 
@@ -160,7 +161,7 @@ export default {
   margin: 0 auto;
   background-color: rgba(45, 28, 43, 0.2);
   width: 1000px;
-  height: 550px;
+  height: 600px;
   padding: 1rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;

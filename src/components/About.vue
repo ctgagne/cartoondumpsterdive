@@ -153,8 +153,8 @@ a,
 }
 
 a:hover {
-  transform: translateY(-5px) translateX(5px);
-  box-shadow: -10px 10px 4px var(--comp-color);
+  transform: translateY(-3px) translateX(3px);
+  box-shadow: -8px 8px 3px var(--comp-color);
 }
 
 .twitch svg {

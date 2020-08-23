@@ -5,7 +5,7 @@
         id="fs-frm"
         name="simple-contact-form"
         accept-charset="utf-8"
-        action="https://formspree.io/xwkrrldy"
+        action="https://formspree.io/xqkyogqq"
         method="post"
         v-if="suggest"
       >
