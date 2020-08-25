@@ -36,6 +36,7 @@
         </svg>
       </div>
     </a>
+    Follow Us
   </div>
 </template>
 
@@ -59,6 +60,8 @@ export default {
   justify-content: center;
   border-right: 1px solid rgba(5, 0, 0, 0.4);
   border-left: 1px solid rgba(0, 0, 0, 0.4);
+  font-family: "Oswald";
+  font-size: 1rem;
 }
 
 #social svg {

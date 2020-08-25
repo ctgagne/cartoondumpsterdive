@@ -37,7 +37,7 @@
               @mouseover="listenpointer = true"
               @mouseleave="listenpointer = false"
             >
-              <a href=""
+              <a href="#episodes"
                 >Listen Now<transition name="appear">
                   <div class="pointer" v-if="listenpointer">
                     <img src="@/assets/cartoonpointer.png" alt="pointer" />
@@ -300,5 +300,11 @@ span.section2 li:last-child {
 }
 .expand-enter, .expand-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
 </style>
