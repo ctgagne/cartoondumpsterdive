@@ -66,11 +66,22 @@
             </li>
           </span>
         </ul>
-        <div class="menu-button" @click="mobile = !mobile">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </div>
+        <transition name="flip">
+          <div class="menu-button" @click="mobile = !mobile" v-if="!mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </div>
+        </transition>
+        <transition name="flip">
+          <div class="menu-button" @click="mobile = !mobile" v-if="mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path
+                d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+              />
+            </svg>
+          </div>
+        </transition>
 
         <div class="mobileclick" @click="mobile = !mobile">
           <transition name="slide">
@@ -434,7 +445,17 @@ footer {
 
 .slide2-enter,
 .slide2-leave-to {
-  transform: translateY(100px);
+  transform: rotate(180deg);
+  opacity: 0;
+}
+.flip-enter-active,
+.flip-leave-active {
+  transition: all 0.8s ease-in-out;
+}
+
+.flip-enter,
+.flip-leave-to {
+  transform: rotate(360deg);
   opacity: 0;
 }
 </style>
