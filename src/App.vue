@@ -350,7 +350,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 930px) {
   #nav {
     height: 56px;
   }
@@ -382,7 +382,7 @@ footer {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 761px) {
   #nav .menu {
     display: none;
   }

@@ -189,7 +189,7 @@ textarea {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 761px) {
   .comment {
     display: none;
   }
