@@ -53,7 +53,7 @@
             <div class="progress-duration" v-if="duration != 'NaN:NaN:NaN'">
               {{ duration }}
             </div>
-            <div class="progress-duration" v-else>
+            <div class="loader" v-else>
               <div class="lds-facebook">
                 <div></div>
                 <div></div>
@@ -319,7 +319,7 @@ export default {
   justify-content: center;
   align-items: center;
   vertical-align: center;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   margin: 1rem 0;
   font-weight: 600;
 }
@@ -331,6 +331,14 @@ export default {
 }
 .progress-duration {
   font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  margin: 1rem 0;
+}
+
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -451,13 +459,15 @@ export default {
 .lds-facebook {
   display: flex;
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
 }
 .lds-facebook div {
   display: inline-block;
   position: absolute;
-  left: 24px;
   width: 16px;
   margin-top: -20px;
   background: var(--dark-text);
@@ -466,15 +476,15 @@ export default {
   animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 .lds-facebook div:nth-child(1) {
-  left: -8px;
+  left: 8px;
   animation-delay: -0.24s;
 }
 .lds-facebook div:nth-child(2) {
-  left: -32px;
+  left: 32px;
   animation-delay: -0.12s;
 }
 .lds-facebook div:nth-child(3) {
-  left: -56px;
+  left: 56px;
   animation-delay: 0;
 }
 @keyframes lds-facebook {
@@ -507,12 +517,22 @@ export default {
   }
   .title {
     flex-direction: column;
+    margin: 0;
   }
   .title-name {
     flex-direction: column;
+    margin: 0;
+  }
+  .episode-number {
+    margin: 0;
   }
   .progress {
     margin: 0;
+  }
+
+  .progress-duration {
+    width: 80%;
+    margin: 1rem auto;
   }
   .podcast-list-container {
     width: 700px;
@@ -522,6 +542,30 @@ export default {
   }
   .player-controls {
     order: 2;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: -10%;
+    width: 16px;
+    margin-top: -20px;
+    margin-left: 10px;
+    background: var(--dark-text);
+    justify-content: center;
+    align-items: center;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 54px;
+    animation-delay: 0;
   }
 }
 
