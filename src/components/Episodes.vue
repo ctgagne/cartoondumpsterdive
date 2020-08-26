@@ -266,9 +266,14 @@ export default {
   min-height: 100%;
   margin: 5rem auto;
 }
+
+.wrapper {
+  padding: 0.5rem;
+  padding-bottom: 0;
+}
 .player {
   display: flex;
-  width: 1000px;
+  width: 950px;
   height: 150px;
   background-color: var(--primary-color);
   margin: 0 auto;
@@ -354,7 +359,7 @@ export default {
   box-sizing: border-box;
   margin: 0 auto;
   background-color: rgba(45, 28, 43, 0.2);
-  width: 1000px;
+  width: 950px;
   height: 600px;
   padding: 1rem;
   border-bottom-left-radius: 1rem;
@@ -491,6 +496,75 @@ export default {
   }
   50% {
     fill: #5f3a5b;
+  }
+}
+
+@media (max-width: 1024px) {
+  .player {
+    width: 700px;
+    height: 400px;
+    flex-direction: column;
+  }
+  .title {
+    flex-direction: column;
+  }
+  .title-name {
+    flex-direction: column;
+  }
+  .progress {
+    margin: 0;
+  }
+  .podcast-list-container {
+    width: 700px;
+  }
+  .progress__bar {
+    width: 95%;
+  }
+  .player-controls {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .player {
+    width: 500px;
+    height: 400px;
+    flex-direction: column;
+  }
+  .podcast-list-container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 520px) {
+  .player {
+    width: 325px;
+    height: 325px;
+    flex-direction: column;
+  }
+  .podcast-list-container {
+    width: 325px;
+  }
+  .progress-duration {
+    font-size: 1.25rem;
+  }
+  .title-name {
+    font-size: 1.5rem;
+  }
+  #episodes {
+    padding-top: 150px;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .player {
+    width: 275px;
+    height: 325px;
+    flex-direction: column;
+  }
+  .podcast-list-container {
+    width: 275px;
   }
 }
 </style>

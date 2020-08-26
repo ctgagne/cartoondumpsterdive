@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <header>
+      <div class="mobile-logo" @click="mobile = !mobile">
+        <a href="#"><img src="@/assets/CDD.png" alt="CDD logo"/></a>
+      </div>
       <div class="top-nav"></div>
       <div id="nav">
-        <ul>
+        <ul class="menu">
           <span class="section1">
             <li
               @mouseover="aboutpointer = true"
@@ -63,12 +66,27 @@
             </li>
           </span>
         </ul>
+        <div class="menu-button" @click="mobile = !mobile">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </div>
+
+        <div class="mobileclick" @click="mobile = !mobile">
+          <transition name="slide">
+            <MobileMenu v-if="mobile" />
+          </transition>
+        </div>
       </div>
     </header>
     <router-view />
     <Episodes />
     <Contact />
+    <transition name="slide2">
+      <ContactMobile v-if="mobile" />
+    </transition>
     <About />
+    <Subscribe />
     <footer>
       © 2020 Cartoon Dumpster Dive
       <a
@@ -83,13 +101,19 @@
 import Episodes from "@/components/Episodes.vue";
 import Social from "@/components/Social.vue";
 import Contact from "@/components/Contact.vue";
+import ContactMobile from "@/components/ContactMobile.vue";
 import About from "@/components/About.vue";
+import Subscribe from "@/components/Subscribe.vue";
+import MobileMenu from "@/components/MobileMenu.vue";
 export default {
   components: {
     Social,
     Episodes,
     Contact,
-    About
+    ContactMobile,
+    About,
+    Subscribe,
+    MobileMenu
   },
   data() {
     return {
@@ -97,7 +121,8 @@ export default {
       episodespointer: false,
       listenpointer: false,
       socialpointer: false,
-      socialmenu: false
+      socialmenu: false,
+      mobile: false
     };
   }
 };
@@ -143,7 +168,7 @@ header {
   left: 0;
   right: 0;
   background-color: var(--dark-bg);
-  z-index: 10;
+  z-index: 3;
   width: 100%;
 }
 
@@ -151,6 +176,7 @@ header {
   height: 75px;
   background-color: var(--light-bg);
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm20 0a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM10 37a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm10-17h20v20H20V20zm10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14z' fill='%23c993a9' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 8;
 }
 
 #nav {
@@ -159,8 +185,9 @@ header {
   background-color: var(--dark-bg);
   max-width: 1440px;
   height: 68px;
-  z-index: 1;
+  z-index: 7;
   margin: 0 auto;
+  position: relative;
 }
 
 #nav ul {
@@ -227,10 +254,6 @@ span.section2 li:last-child {
 
 #nav .logo img {
   width: 170px;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 
 #nav .logo a {
@@ -306,5 +329,112 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+}
+
+.mobile-logo {
+  display: none;
+  z-index: 15;
+  position: relative;
+}
+
+.menu-button {
+  display: none;
+  z-index: 10;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  #nav li,
+  #nav a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #nav {
+    height: 56px;
+  }
+  .top-nav {
+    height: 56px;
+  }
+  #nav li,
+  #nav a {
+    font-size: 16px;
+    border: none;
+  }
+  #nav ul {
+    transform: translateY(-55px);
+  }
+  #nav .logo {
+    order: -2;
+  }
+
+  #nav .logo img {
+    width: 100px;
+  }
+
+  #nav .logo a {
+    padding: 9px 0;
+  }
+
+  #nav .logo img:hover {
+    animation: Bounce 1s;
+  }
+}
+
+@media (max-width: 520px) {
+  #nav .menu {
+    display: none;
+  }
+  .mobile-logo {
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 2%;
+  }
+  .mobile-logo img {
+    width: 125px;
+  }
+  .top-nav {
+    height: 56px;
+    position: relative;
+  }
+  .menu-button {
+    display: flex;
+    position: absolute;
+    border: 2px solid var(--light-bg);
+    border-radius: 50%;
+    width: 44px;
+    top: 8%;
+    right: 2.5%;
+    justify-content: center;
+    z-index: 4;
+  }
+  .menu-button svg {
+    fill: var(--light-bg);
+    margin: 8px;
+    width: 30px;
+  }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateY(-100%);
+}
+
+.slide2-enter-active,
+.slide2-leave-active {
+  transition: all 1s ease-in-out;
+}
+
+.slide2-enter,
+.slide2-leave-to {
+  transform: translateY(100px);
+  opacity: 0;
 }
 </style>

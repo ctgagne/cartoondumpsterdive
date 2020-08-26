@@ -71,7 +71,7 @@ export default {
   height: calc(100vh - 230px);
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 6rem;
+  padding-top: 8rem;
   justify-content: center;
   align-items: center;
 }
@@ -81,7 +81,6 @@ export default {
 }
 .twitterfeed {
   flex: 1;
-  width: 500px;
   height: 500px;
   padding: 2rem;
   margin: 1rem;
@@ -257,6 +256,36 @@ a:hover {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  #about {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .twitterfeed {
+    display: none;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  #about {
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 320px) {
+  #about {
+    padding-top: 230px;
+  }
+  #about p:nth-of-type(2) {
+    font-size: 1.1rem;
   }
 }
 </style>
