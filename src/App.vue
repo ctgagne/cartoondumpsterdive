@@ -416,6 +416,7 @@ footer {
     border: 2px solid var(--light-bg);
     border-radius: 50%;
     width: 44px;
+    height: 44px;
     top: 8%;
     right: 2.5%;
     justify-content: center;
@@ -425,6 +426,7 @@ footer {
     fill: var(--light-bg);
     margin: 8px;
     width: 30px;
+    height: 30px;
   }
 }
 
