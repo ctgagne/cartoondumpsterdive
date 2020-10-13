@@ -1,6 +1,11 @@
 <template>
   <div class="mobile-menu">
     <div class="menu-buttons">
+      <a
+        href="https://teespring.com/cartoon-dumpster-dive?pid=369"
+        target="_blank"
+        ><div class="link">Shop</div></a
+      >
       <a href="#subscribe"><div class="link">Subscribe</div></a>
       <a href="#episodes"><div class="link">Episode Guide</div></a>
       <a href="#about"><div class="link">About the Podcast</div></a>

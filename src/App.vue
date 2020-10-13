@@ -40,8 +40,10 @@
               @mouseover="listenpointer = true"
               @mouseleave="listenpointer = false"
             >
-              <a href="#episodes"
-                >Listen Now<transition name="appear">
+              <a
+                href="https://teespring.com/cartoon-dumpster-dive?pid=369"
+                target="_blank"
+                >Shop Merch<transition name="appear">
                   <div class="pointer" v-if="listenpointer">
                     <img src="@/assets/cartoonpointer.png" alt="pointer" />
                   </div> </transition
