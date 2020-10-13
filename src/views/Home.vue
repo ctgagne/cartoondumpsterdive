@@ -5,7 +5,7 @@
         <div class="title">The <span>Cartoon Dumpster Dive</span> Podcast</div>
         <div class="greeting">
           <h1 class="not-mobile">
-            <svg xmlns="http://www.w3.org/2000/svg" width="98vw" height="275">
+            <svg xmlns="http://www.w3.org/2000/svg" width="75vw" height="275">
               <text x="15" y="75">
                 Dive into a dumpster of
                 <tspan x="15" y="160">
@@ -220,9 +220,12 @@ export default {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1060px) {
   .greeting h1 {
     font-size: 64px;
+  }
+  .greeting h1 svg {
+    width: 98vw;
   }
 }
 
