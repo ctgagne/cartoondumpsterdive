@@ -41,7 +41,7 @@
               @mouseleave="listenpointer = false"
             >
               <a
-                href="https://teespring.com/cartoon-dumpster-dive?pid=369"
+                href="https://teespring.com/stores/cartoon-dumpster-dive"
                 target="_blank"
                 >Shop Merch<transition name="appear">
                   <div class="pointer" v-if="listenpointer">

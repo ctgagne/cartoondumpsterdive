@@ -2,7 +2,7 @@
   <div class="mobile-menu">
     <div class="menu-buttons">
       <a
-        href="https://teespring.com/cartoon-dumpster-dive?pid=369"
+        href="https://teespring.com/stores/cartoon-dumpster-dive"
         target="_blank"
         ><div class="link">Shop</div></a
       >
