@@ -119,6 +119,9 @@ import About from "@/components/About.vue";
 import Subscribe from "@/components/Subscribe.vue";
 import MobileMenu from "@/components/MobileMenu.vue";
 export default {
+  metaInfo: {
+    title: "Cartoon Dumpster Dive"
+  },
   components: {
     Social,
     Episodes,
