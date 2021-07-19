@@ -322,7 +322,7 @@ export default {
     position: relative;
     order: -1;
     width: 90%;
-    height: 50%;
+    max-height: 50%;
   }
   .greeting h1 {
     font-size: 32px;

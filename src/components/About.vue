@@ -50,6 +50,12 @@
             Follow us on Twitch!
           </div>
         </a>
+        <p>Sent us a voice message!</p>
+        <a href="https://www.speakpipe.com/cartoondumpsterdive">
+          <div class="speak-pipe">
+            <img src="@/assets/speakpipe-logo-gray.svg" alt="SpeakPipe" />
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -127,6 +133,7 @@ h3 svg {
   flex-direction: column;
   flex: 1.5;
   margin-left: 1rem;
+  margin-right: 1rem;
   margin-top: -2rem;
   justify-content: center;
   align-content: center;
@@ -144,7 +151,8 @@ p {
   text-align: left;
 }
 
-p:last-of-type {
+p:nth-of-type(2),
+p:nth-of-type(3) {
   margin-top: 2rem;
   margin-bottom: 0.1rem;
   text-align: center;
@@ -161,6 +169,10 @@ a,
   border-radius: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.speak-pipe {
+  padding: 1rem;
 }
 
 a:hover {
